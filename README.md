@@ -1,6 +1,4 @@
-# Carousel Automation
-
-## HTML/CSS → images & PDF (this repo)
+# Carousel Automation: HTML/CSS → images & PDF
 
 This project includes a **template-based render pipeline** so you can turn carousel content into images and a PDF without touching Figma.
 
