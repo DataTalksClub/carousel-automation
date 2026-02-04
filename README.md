@@ -6,7 +6,7 @@ This project includes a **template-based render pipeline** so you can turn carou
 
 ### How it works
 
-1. **Define your frame templates** as HTML/CSS in `templates/` (one “page” per frame).
+1. **Define your frame templates** as HTML/CSS in `templates/` (one "page" per frame).
 2. **Fill placeholders** with content from a JSON file (e.g. `content/example.json`).
 3. **Render** with headless Chromium (Playwright):
    - **JPEG or PNG** per frame (`frame-01.png`, `frame-02.png`, …)
@@ -68,7 +68,7 @@ To add or change a frame: edit or create `templates/frames/<type>.html` and `tem
 
 ### Syncing from Figma (Figma MCP)
 
-To pull design context (HTML/CSS) from a Figma file into these templates, see **[FIGMA_MCP.md](./FIGMA_MCP.md)**. You’ll need a link to your Figma frame; the agent can then call the Figma MCP and update the matching frame template.
+To pull design context (HTML/CSS) from a Figma file into these templates, see **[FIGMA_MCP.md](./FIGMA_MCP.md)**. You'll need a link to your Figma frame; the agent can then call the Figma MCP and update the matching frame template.
 
 ### Fonts
 
