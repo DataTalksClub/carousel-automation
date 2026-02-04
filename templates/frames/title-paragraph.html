@@ -1,0 +1,20 @@
+<div class="frame frame-title-paragraph{% if slide.variant == 'light' %} frame-title-paragraph-light{% endif %}" data-frame-index="{{ loop.index0 }}" data-frame-type="title-paragraph">
+  <div class="frame-title-paragraph-inner">
+    <div class="frame-title-paragraph-block">
+      <h2 class="frame-title-paragraph-title">{{ slide.title | default(slide.heading) }}</h2>
+      <div class="frame-title-paragraph-body">{{ slide.body | default(slide.paragraph) }}</div>
+    </div>
+    {% if slide.swipeLabel or slide.avatarUrl %}
+    <div class="frame-title-paragraph-footer">
+      {% if slide.swipeLabel %}<span class="frame-title-paragraph-swipe">{{ slide.swipeLabel }}</span>{% endif %}
+      {% if slide.avatarUrl %}
+      <div class="frame-title-paragraph-avatar"><img src="{{ slide.avatarUrl }}" alt="" /><span class="frame-title-paragraph-avatar-mask"></span></div>
+      {% else %}
+      <div class="frame-title-paragraph-swipe-btn" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 18l6-6-6-6" stroke="#032911" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% if slide.footer %}<div class="frame-footer frame-title-paragraph-footer-text">{{ slide.footer }}</div>{% endif %}
+  </div>
+  <span class="frame-number">{{ loop.index }} / {{ slides | length }}</span>
+</div>

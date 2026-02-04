@@ -1,0 +1,20 @@
+{
+  "title": "Example Carousel",
+  "slides": [
+    {
+      "title": "Welcome to the deck",
+      "body": "This is the first slide. Define your carousel as HTML/CSS, fill placeholders from JSON, and render to images or PDF with Playwright.",
+      "footer": "Figma MCP for Carousels"
+    },
+    {
+      "title": "How it works",
+      "body": "1. Edit templates/slide.html and templates/slide.css. 2. Put your content in a JSON file with a \"slides\" array. 3. Run: npm run render content/your-content.json",
+      "footer": "One slide = one page"
+    },
+    {
+      "title": "Output",
+      "body": "You get PNG or JPEG per slide in the output folder, plus a single PDF with one page per slide. Use --output to choose the directory, --format jpeg for smaller images, --no-pdf to skip PDF.",
+      "footer": "output/slide-01.png, slide-02.png, ... carousel.pdf"
+    }
+  ]
+}

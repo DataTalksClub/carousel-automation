@@ -1,0 +1,155 @@
+/* Frame: cover – unified with title-paragraph, outro (630×1200 vertical) */
+
+.frame-cover {
+  background: var(--carousel-white);
+  padding: 0;
+}
+.frame-cover .frame-number {
+  color: var(--carousel-frame-number-on-light);
+}
+
+.frame-cover-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.frame-cover-author {
+  position: absolute;
+  left: var(--carousel-padding-x);
+  top: var(--carousel-padding-y);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: var(--carousel-label-weight);
+  font-size: var(--carousel-label-size);
+  line-height: var(--carousel-label-line);
+  letter-spacing: 0.01em;
+  color: var(--carousel-black);
+  margin: 0;
+  max-width: 60%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.frame-cover-block {
+  position: absolute;
+  left: var(--carousel-padding-x);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--carousel-space-lg);
+  max-width: var(--carousel-content-max-width);
+  margin-top: -1rem;
+}
+
+.frame-cover-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: var(--carousel-title-weight);
+  font-size: var(--carousel-title-size);
+  line-height: var(--carousel-title-line);
+  letter-spacing: var(--carousel-title-spacing);
+  color: var(--carousel-green);
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.frame-cover-subtitle {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: var(--carousel-body-weight);
+  font-size: var(--carousel-body-size);
+  line-height: var(--carousel-body-line);
+  color: rgba(26, 26, 26, 0.85);
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.frame-cover-swipe-row {
+  position: absolute;
+  right: var(--carousel-padding-x);
+  bottom: var(--carousel-padding-x);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--carousel-space-sm);
+}
+
+.frame-cover-swipe {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: var(--carousel-label-weight);
+  font-size: var(--carousel-label-size);
+  line-height: var(--carousel-label-line);
+  color: var(--carousel-green);
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  white-space: nowrap;
+}
+
+.frame-cover-swipe-btn {
+  width: var(--carousel-swipe-btn-size);
+  height: var(--carousel-swipe-btn-size);
+  border-radius: 50%;
+  background: var(--carousel-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.frame-cover-swipe-btn svg {
+  flex-shrink: 0;
+}
+
+.frame-cover-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frame-cover-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.frame-cover-avatar-mask {
+  position: absolute;
+  inset: 0;
+  background: var(--carousel-green);
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.frame-cover-accent {
+  position: absolute;
+  left: var(--carousel-padding-x);
+  bottom: 140px;
+  font-size: 1.125rem;
+  padding: 0.75rem 1rem;
+  background: #f0f0f0;
+  border-radius: 8px;
+  max-height: 4em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.frame-cover-footer {
+  position: absolute;
+  left: var(--carousel-padding-x);
+  bottom: var(--carousel-padding-y);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #555;
+  margin: 0;
+}

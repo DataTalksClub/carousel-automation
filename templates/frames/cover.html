@@ -1,0 +1,20 @@
+<div class="frame frame-cover" data-frame-index="{{ loop.index0 }}" data-frame-type="cover">
+  <div class="frame-cover-inner">
+    {% if slide.author %}<p class="frame-cover-author">{{ slide.author }}</p>{% endif %}
+    <div class="frame-cover-block">
+      <h1 class="frame-cover-title">{{ slide.title | default('Untitled') }}</h1>
+      {% if slide.subtitle %}<p class="frame-cover-subtitle">{{ slide.subtitle }}</p>{% endif %}
+    </div>
+    {% if slide.accent %}<div class="frame-cover-accent">{{ slide.accent }}</div>{% endif %}
+    <div class="frame-cover-swipe-row">
+      {% if slide.swipeLabel %}<span class="frame-cover-swipe">{{ slide.swipeLabel }}</span>{% endif %}
+      {% if slide.avatarUrl %}
+      <div class="frame-cover-avatar"><img src="{{ slide.avatarUrl }}" alt="" /><span class="frame-cover-avatar-mask"></span></div>
+      {% else %}
+      <div class="frame-cover-swipe-btn" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 18l6-6-6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      {% endif %}
+    </div>
+    {% if slide.brandFooter %}<div class="frame-cover-footer">{{ slide.brandFooter }}</div>{% endif %}
+  </div>
+  <span class="frame-number">{{ loop.index }} / {{ slides | length }}</span>
+</div>

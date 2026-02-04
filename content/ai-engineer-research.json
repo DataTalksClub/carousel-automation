@@ -1,0 +1,35 @@
+{
+  "title": "AI Engineer Research – Carousel",
+  "carousel_type": "research_call",
+  "slides": [
+    {
+      "type": "cover",
+      "author": "Alexey Grigorev",
+      "title": "What does an AI engineer role look like today?",
+      "subtitle": "Job descriptions are often abstract. Interviews and tasks reveal the actual expectations.",
+      "swipeLabel": "Swipe for more",
+      "brandFooter": "@agrigorev"
+    },
+    {
+      "type": "title-paragraph",
+      "title": "What I'm working with",
+      "body": "So far I've collected over 250 job descriptions and dozens of real repositories related to AI engineering work."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "What I'm analyzing",
+      "body": "How companies hire AI engineers, what they ask in interviews, what take-home assignments look like, and which skills are evaluated in practice."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "Adding real interview experience",
+      "body": "To complement this data, I'm gathering input from people who have recently interviewed for AI engineer roles."
+    },
+    {
+      "type": "outro",
+      "ctaText": "I'll share what I learn",
+      "supportingText": "I'll publish patterns and observations from this work in my newsletter.",
+      "url": "https://alexeyondata.substack.com/"
+    }
+  ]
+}

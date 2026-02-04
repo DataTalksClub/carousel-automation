@@ -1,0 +1,23 @@
+{
+  "name": "figma-carousel-render",
+  "version": "1.0.0",
+  "description": "HTML/CSS carousel templates → fill with JSON → render to images and PDF via headless Chromium",
+  "type": "module",
+  "main": "src/render.js",
+  "scripts": {
+    "render": "node src/render.js",
+    "render:example": "node src/render.js content/example.json"
+  },
+  "keywords": [
+    "carousel",
+    "pdf",
+    "screenshot",
+    "playwright",
+    "template"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "nunjucks": "^3.2.4",
+    "playwright": "^1.49.0"
+  }
+}

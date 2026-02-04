@@ -1,0 +1,149 @@
+/* Frame: title-paragraph – flexible web design layout */
+
+.frame-title-paragraph {
+  position: relative;
+  background: var(--carousel-green);
+  padding: var(--carousel-padding-y) var(--carousel-padding-x);
+  padding-bottom: calc(var(--carousel-padding-y) + 100px);
+}
+.frame-title-paragraph .frame-number {
+  color: var(--carousel-frame-number-on-dark);
+}
+.frame-title-paragraph-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(1200px - var(--carousel-padding-y) * 2 - 100px);
+  font-family: 'Ubuntu', sans-serif;
+}
+/* Flexible content block - grows with content */
+.frame-title-paragraph-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--carousel-space-lg);
+  max-width: var(--carousel-content-max-width);
+}
+.frame-title-paragraph-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: var(--carousel-title-weight);
+  font-size: var(--carousel-title-size);
+  line-height: var(--carousel-title-line);
+  letter-spacing: var(--carousel-title-spacing);
+  color: var(--carousel-cream);
+  margin: 0;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.frame-title-paragraph-body {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: var(--carousel-body-weight);
+  font-size: var(--carousel-body-size);
+  line-height: var(--carousel-body-line);
+  color: var(--carousel-cream-soft);
+  margin: 0;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+/* Footer: swipe row at bottom-right */
+.frame-title-paragraph-footer {
+  position: absolute;
+  right: var(--carousel-padding-x);
+  bottom: var(--carousel-padding-y);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--carousel-space-sm);
+  pointer-events: none;
+}
+.frame-title-paragraph-footer > * {
+  pointer-events: auto;
+}
+.frame-title-paragraph-swipe {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: var(--carousel-label-weight);
+  font-size: var(--carousel-label-size);
+  line-height: var(--carousel-label-line);
+  color: var(--carousel-white);
+  margin: 0;
+  white-space: nowrap;
+}
+.frame-title-paragraph-swipe-btn {
+  width: var(--carousel-swipe-btn-size);
+  height: var(--carousel-swipe-btn-size);
+  border-radius: 50%;
+  background: var(--carousel-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.frame-title-paragraph-swipe-btn svg {
+  flex-shrink: 0;
+}
+.frame-title-paragraph-avatar {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frame-title-paragraph-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.frame-title-paragraph-avatar-mask {
+  position: absolute;
+  inset: 0;
+  background: var(--carousel-white);
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.frame-title-paragraph-footer-text {
+  position: absolute;
+  left: var(--carousel-padding-x);
+  bottom: var(--carousel-padding-y);
+  color: rgba(244, 240, 237, 0.85);
+  font-size: 0.9375rem;
+  margin: 0;
+  max-width: 60%;
+}
+
+/* Light variant */
+.frame-title-paragraph-light {
+  background: var(--carousel-white);
+}
+.frame-title-paragraph-light .frame-number {
+  color: var(--carousel-frame-number-on-light);
+}
+.frame-title-paragraph-light .frame-title-paragraph-title {
+  color: var(--carousel-black);
+}
+.frame-title-paragraph-light .frame-title-paragraph-body {
+  color: rgba(26, 26, 26, 0.85);
+}
+.frame-title-paragraph-light .frame-title-paragraph-swipe {
+  color: var(--carousel-green);
+}
+.frame-title-paragraph-light .frame-title-paragraph-swipe-btn {
+  background: var(--carousel-green);
+}
+.frame-title-paragraph-light .frame-title-paragraph-swipe-btn svg path {
+  stroke: var(--carousel-white);
+}
+.frame-title-paragraph-light .frame-title-paragraph-avatar-mask {
+  background: var(--carousel-green);
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+}
+.frame-title-paragraph-light .frame-title-paragraph-footer-text {
+  color: rgba(26, 26, 26, 0.7);
+}

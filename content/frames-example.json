@@ -1,0 +1,115 @@
+{
+  "title": "Frame templates reference",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Your Hook Stops the Scroll",
+      "subtitle": "One line that sets context and creates curiosity",
+      "accent": "Optional accent or tagline block",
+      "brandFooter": "© Your Brand"
+    },
+    {
+      "type": "section-divider",
+      "headline": "Part 1: The problem",
+      "number": "1",
+      "body": "Now let's look at what we're solving."
+    },
+    {
+      "type": "outro",
+      "ctaText": "Follow for more tips on X",
+      "bullets": ["Check the link in bio", "Save this carousel", "Share with your team"],
+      "handle": "@yourhandle",
+      "url": "yourbrand.com"
+    },
+    {
+      "type": "title-paragraph",
+      "title": "One idea per slide",
+      "body": "Keep the paragraph to 2–4 lines. Enforce max character count in your content pipeline. Use CSS line-clamp as a safety net."
+    },
+    {
+      "type": "bullet-list",
+      "title": "Key points to remember",
+      "bullets": [
+        "First bullet: one line only",
+        "Second bullet: no nested bullets",
+        "Third: 3–6 bullets per slide",
+        "Fourth: keeps layout stable"
+      ]
+    },
+    {
+      "type": "numbered-steps",
+      "title": "How to automate carousels",
+      "steps": [
+        "Define your frame types in JSON",
+        "Map each slide to a template",
+        "Validate symmetry for comparison frames",
+        "Render with Playwright to images or PDF"
+      ]
+    },
+    {
+      "type": "definition",
+      "term": "Line-clamp",
+      "definition": "A CSS property that limits the number of lines of text displayed and truncates with an ellipsis. Essential for carousel automation to prevent overflow.",
+      "whyItMatters": "Makes layout predictable without manual copy trimming."
+    },
+    {
+      "type": "two-column",
+      "leftTitle": "Option A",
+      "leftBullets": ["Point one", "Point two", "Point three"],
+      "rightTitle": "Option B",
+      "rightBullets": ["Point one", "Point two", "Point three"],
+      "footer": "Same bullet count on both sides"
+    },
+    {
+      "type": "pros-cons",
+      "title": "Using templates",
+      "pros": ["Consistent layout", "Easy to validate", "Reusable across carousels"],
+      "cons": ["Need to enforce limits", "Less freeform design"]
+    },
+    {
+      "type": "before-after",
+      "beforeTitle": "Before",
+      "beforeContent": "Manual design, inconsistent spacing, copy overflow.",
+      "afterTitle": "After",
+      "afterContent": "JSON-driven frames, line-clamp, stable layouts."
+    },
+    {
+      "type": "quote",
+      "quote": "Templates made our carousel production 10x faster. We ship in minutes instead of hours.",
+      "author": "Jane Doe",
+      "role": "Content lead"
+    },
+    {
+      "type": "data-stats",
+      "stat": "73%",
+      "explanation": "Of respondents said they prefer short, scannable carousels over long articles.",
+      "footer": "Source: Internal survey, 2024"
+    },
+    {
+      "type": "diagram",
+      "caption": "Pre-designed SVG or image; inject URL or inline SVG. Do not generate diagrams dynamically unless necessary.",
+      "imageUrl": "https://placehold.co/600x300/e5e5e5/999?text=Diagram+placeholder"
+    },
+    {
+      "type": "image-caption",
+      "imageUrl": "https://placehold.co/800x450/f0f0f0/666?text=Image+placeholder",
+      "caption": "Enforce image aspect ratios in your pipeline."
+    },
+    {
+      "type": "agenda",
+      "title": "What we'll cover",
+      "sections": ["Context & problem", "Solutions", "Examples", "Next steps"],
+      "showProgress": true
+    },
+    {
+      "type": "recap",
+      "title": "Key takeaways",
+      "takeaways": [
+        "Use typed frames for stable, automatable carousels",
+        "Enforce character and list limits at input time",
+        "Comparison frames need symmetric data",
+        "Visual frames: pre-designed assets, fixed aspect ratios"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=630, height=1200" />
+  <title>{{ title | default('Carousel') }}</title>
+  {% if inlineStyles %}
+  <style>{{ inlineStyles }}</style>
+  {% else %}
+  <link rel="stylesheet" href="css/base.css" />
+  {% endif %}
+  <style>
+    html, body { margin: 0; padding: 0; width: 630px; min-width: 630px; max-width: 630px; }
+    .frame { width: 630px !important; height: 1200px !important; min-width: 630px; max-width: 630px; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; page-break-after: always; box-sizing: border-box; }
+    .frame:last-child { page-break-after: auto; }
+    .frame-number { position: absolute; bottom: 24px; right: 32px; font-size: 0.875rem; color: #aaa; }
+  </style>
+</head>
+<body>
+  {% for slide in slides %}
+  {% set type = slide.type | default('title-paragraph') %}
+  {% set framePartial = 'frames/' ~ type ~ '.html' %}
+  {% include framePartial %}
+  {% endfor %}
+</body>
+</html>
