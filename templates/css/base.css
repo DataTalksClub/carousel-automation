@@ -1,7 +1,5 @@
 /* Base styles for all carousel frames. Frame-specific styles live in css/frames/<type>.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
-
 /* Shared design tokens for cover, title-paragraph, outro */
 :root {
   /* Colors */
@@ -20,6 +18,9 @@
   --carousel-space-lg: 2rem;
   --carousel-space-xl: 2.5rem;
   
+  /* Font: system default sans-serif only */
+  --carousel-font: sans-serif;
+
   /* Typography - optimized for mobile readability (24pt+ minimum) */
   --carousel-title-size: 2.75rem;      /* 44px = ~33pt */
   --carousel-title-line: 1.25;
@@ -46,7 +47,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--carousel-font);
 }
 
 * {
@@ -60,7 +61,7 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--carousel-font);
   background: #fff;
   color: #1a1a1a;
   position: relative;

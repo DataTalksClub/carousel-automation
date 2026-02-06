@@ -1,0 +1,46 @@
+{
+  "title": "AI Engineer Role – 3-Part Event Series",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "AI Engineer is among the most common job titles in 2026, yet one of the least clearly defined.",
+      "subtitle": "Findings from 1,500+ job descriptions and repos, shared in a 3-part live series.",
+      "swipeLabel": "Swipe for more",
+      "brandFooter": "Virtual · Free"
+    },
+    {
+      "type": "title-paragraph",
+      "title": "What the series covers",
+      "body": "What the role entails, how companies run interviews, and how take-home assignments are assessed.",
+      "variant": "light"
+    },
+    {
+      "type": "title-paragraph",
+      "title": "1) Defining the AI Engineer Role — Tue, Feb 24, 5:00 PM CET",
+      "body": "Insights from 1,500+ job descriptions. How AI engineer expectations differ from ML researchers. A typical day in the role."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "2) The Interview Process — Tue, Mar 3, 5:00 PM CET",
+      "body": "Interview questions from recent candidates. How to explain architecture and model choices. Common coding and system design tasks.",
+      "variant": "light"
+    },
+    {
+      "type": "title-paragraph",
+      "title": "3) Take-Home Assignments — Mon, Mar 9, 6:00 PM CET",
+      "body": "Examples from Q4 2025 and Q1 2026. What reviewers look for. An end-to-end document processing task."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "Virtual (Zoom) · Free",
+      "body": "For anyone preparing for AI engineering roles or considering this path.",
+      "variant": "light"
+    },
+    {
+      "type": "outro",
+      "ctaText": "Register to get the join link",
+      "supportingText": "Sign up to receive the link before each session.",
+      "url": "Link in the post"
+    }
+  ]
+}

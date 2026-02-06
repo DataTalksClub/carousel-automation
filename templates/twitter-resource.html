@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200, height=675" />
+  <title>{{ resourceTitle | default('Resource') }}</title>
+  <style>{{ inlineStyles }}</style>
+  <style>
+    html, body { margin: 0; padding: 0; width: 1200px; min-width: 1200px; max-width: 1200px; height: 675px; min-height: 675px; max-height: 675px; overflow: hidden; }
+  </style>
+</head>
+<body>
+  <div class="frame frame-twitter-resource" data-frame-type="twitter-resource">
+    <div class="twitter-doc">
+      <header class="twitter-doc-header">
+        <h1 class="twitter-doc-title">{{ resourceTitle }}</h1>
+        {% if subtitle %}<p class="twitter-doc-subtitle">{{ subtitle }}</p>{% endif %}
+      </header>
+      <div class="twitter-doc-body">
+        {% for section in sections %}
+        <section class="twitter-doc-section">
+          <h2 class="twitter-doc-section-heading">{{ section.heading }}</h2>
+          <div class="twitter-doc-section-content">
+            {% if section.bullets and (section.bullets | length) > 0 %}
+            <ul class="twitter-doc-list">
+              {% for item in section.bullets %}<li>{{ item }}</li>{% endfor %}
+            </ul>
+            {% elif section.body %}
+            <p class="twitter-doc-paragraph">{{ section.body }}</p>
+            {% endif %}
+          </div>
+        </section>
+        {% endfor %}
+      </div>
+      {% if cta %}<footer class="twitter-doc-footer">{{ cta }}</footer>{% endif %}
+    </div>
+  </div>
+</body>
+</html>

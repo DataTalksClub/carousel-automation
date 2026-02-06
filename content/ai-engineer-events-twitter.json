@@ -1,0 +1,38 @@
+{
+  "resourceTitle": "AI Engineer Role in 2026 — Event Series",
+  "subtitle": "3-part live series · Virtual (Zoom) · Free",
+  "sections": [
+    {
+      "heading": "What we're covering",
+      "body": "What the role entails, how companies run interviews, and how take-home assignments are assessed."
+    },
+    {
+      "heading": "Session 1 — Defining the role",
+      "bullets": [
+        "Tue, Feb 24, 2026 · 5:00 PM CET",
+        "Insights from 1,500+ job descriptions",
+        "AI engineers vs. ML researchers",
+        "A typical day in the role"
+      ]
+    },
+    {
+      "heading": "Session 2 — The interview process",
+      "bullets": [
+        "Tue, Mar 3, 2026 · 5:00 PM CET",
+        "Interview questions from recent candidates",
+        "Explaining architecture and model choices",
+        "Coding and system design tasks"
+      ]
+    },
+    {
+      "heading": "Session 3 — Take-home assignments",
+      "bullets": [
+        "Mon, Mar 9, 2026 · 6:00 PM CET",
+        "Examples from Q4 2025 and Q1 2026",
+        "What reviewers look for",
+        "End-to-end document processing task"
+      ]
+    }
+  ],
+  "cta": "Register to get the join link — link in bio"
+}

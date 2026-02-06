@@ -13,14 +13,14 @@
   width: 100%;
   height: 100%;
   min-height: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: var(--carousel-font);
 }
 
 .frame-cover-author {
   position: absolute;
   left: var(--carousel-padding-x);
   top: var(--carousel-padding-y);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: var(--carousel-font);
   font-weight: var(--carousel-label-weight);
   font-size: var(--carousel-label-size);
   line-height: var(--carousel-label-line);
@@ -46,7 +46,7 @@
 }
 
 .frame-cover-title {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: var(--carousel-font);
   font-weight: var(--carousel-title-weight);
   font-size: var(--carousel-title-size);
   line-height: var(--carousel-title-line);
@@ -59,7 +59,7 @@
 }
 
 .frame-cover-subtitle {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: var(--carousel-font);
   font-weight: var(--carousel-body-weight);
   font-size: var(--carousel-body-size);
   line-height: var(--carousel-body-line);
@@ -80,7 +80,7 @@
 }
 
 .frame-cover-swipe {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: var(--carousel-font);
   font-weight: var(--carousel-label-weight);
   font-size: var(--carousel-label-size);
   line-height: var(--carousel-label-line);

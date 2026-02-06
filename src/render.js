@@ -10,6 +10,7 @@
  *
  * Usage:
  *   node src/render.js [content.json] [--output dir] [--format png|jpeg] [--no-pdf]
+ *   node src/render.js [content.json] --twitter [--output dir]  → single 1200×675 document/resource image
  */
 
 import { chromium } from 'playwright';
@@ -23,6 +24,8 @@ const ROOT = resolve(__dirname, '..');
 
 const SLIDE_WIDTH = 630;
 const SLIDE_HEIGHT = 1200;
+const TWITTER_WIDTH = 1200;
+const TWITTER_HEIGHT = 675;
 
 const FRAME_TYPES = new Set([
   'cover', 'section-divider', 'outro', 'title-paragraph', 'bullet-list', 'numbered-steps',
@@ -38,12 +41,20 @@ function parseArgs() {
   const formatIdx = args.indexOf('--format');
   const imageFormat = (formatIdx >= 0 ? args[formatIdx + 1] : 'png').toLowerCase();
   const noPdf = args.includes('--no-pdf');
-  return { contentPath: resolve(ROOT, contentPath), outputDir: resolve(ROOT, outputDir), imageFormat, noPdf };
+  const twitter = args.includes('--twitter');
+  return { contentPath: resolve(ROOT, contentPath), outputDir: resolve(ROOT, outputDir), imageFormat, noPdf, twitter };
 }
 
-function loadContent(contentPath) {
+function loadContent(contentPath, twitterMode) {
   const raw = readFileSync(contentPath, 'utf-8');
   const data = JSON.parse(raw);
+  if (twitterMode) {
+    if (!data.sections || !Array.isArray(data.sections)) {
+      throw new Error('Twitter resource JSON must have a "sections" array and "resourceTitle".');
+    }
+    if (!data.resourceTitle) data.resourceTitle = 'Resource';
+    return data;
+  }
   if (!data.slides || !Array.isArray(data.slides)) {
     throw new Error('Content JSON must have a "slides" array.');
   }
@@ -67,6 +78,14 @@ function buildInlineCss(slides) {
   return css;
 }
 
+function buildTwitterCss() {
+  const cssDir = join(ROOT, 'templates', 'css');
+  let css = readFileSync(join(cssDir, 'base.css'), 'utf-8');
+  const twitterCssPath = join(cssDir, 'twitter-resource.css');
+  if (existsSync(twitterCssPath)) css += '\n' + readFileSync(twitterCssPath, 'utf-8');
+  return css;
+}
+
 function renderTemplate(content, inlineCss) {
   nunjucks.configure(join(ROOT, 'templates'), { autoescape: true });
   return nunjucks.render('slide.html', {
@@ -74,6 +93,39 @@ function renderTemplate(content, inlineCss) {
     title: content.title || 'Carousel',
     inlineStyles: inlineCss,
   });
+}
+
+function renderTwitterTemplate(content, inlineCss) {
+  nunjucks.configure(join(ROOT, 'templates'), { autoescape: true });
+  return nunjucks.render('twitter-resource.html', {
+    ...content,
+    inlineStyles: inlineCss,
+  });
+}
+
+async function renderTwitterToImage(html, options) {
+  const { outputDir, imageFormat } = options;
+  mkdirSync(outputDir, { recursive: true });
+
+  const browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage();
+
+  await page.setViewportSize({ width: TWITTER_WIDTH, height: TWITTER_HEIGHT });
+  await page.setContent(html, {
+    waitUntil: 'networkidle',
+    timeout: 15000,
+  });
+
+  const ext = imageFormat === 'jpeg' ? 'jpg' : 'png';
+  const path = join(outputDir, `twitter-resource.${ext}`);
+  await page.screenshot({
+    path,
+    type: imageFormat,
+    clip: { x: 0, y: 0, width: TWITTER_WIDTH, height: TWITTER_HEIGHT },
+  });
+  console.log('Written:', path);
+
+  await browser.close();
 }
 
 async function renderToImagesAndPdf(html, options) {
@@ -126,9 +178,17 @@ async function renderToImagesAndPdf(html, options) {
 }
 
 async function main() {
-  const { contentPath, outputDir, imageFormat, noPdf } = parseArgs();
+  const { contentPath, outputDir, imageFormat, noPdf, twitter } = parseArgs();
 
-  const content = loadContent(contentPath);
+  if (twitter) {
+    const content = loadContent(contentPath, true);
+    const inlineCss = buildTwitterCss();
+    const html = renderTwitterTemplate(content, inlineCss);
+    await renderTwitterToImage(html, { outputDir, imageFormat });
+    return;
+  }
+
+  const content = loadContent(contentPath, false);
   const inlineCss = buildInlineCss(content.slides);
   const html = renderTemplate(content, inlineCss);
 
