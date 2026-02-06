@@ -24,6 +24,7 @@ const ROOT = resolve(__dirname, '..');
 
 const SLIDE_WIDTH = 630;
 const SLIDE_HEIGHT = 1200;
+const SQUARE_SIZE = 1080;
 const TWITTER_WIDTH = 1200;
 const TWITTER_HEIGHT = 675;
 
@@ -42,7 +43,8 @@ function parseArgs() {
   const imageFormat = (formatIdx >= 0 ? args[formatIdx + 1] : 'png').toLowerCase();
   const noPdf = args.includes('--no-pdf');
   const twitter = args.includes('--twitter');
-  return { contentPath: resolve(ROOT, contentPath), outputDir: resolve(ROOT, outputDir), imageFormat, noPdf, twitter };
+  const square = args.includes('--square');
+  return { contentPath: resolve(ROOT, contentPath), outputDir: resolve(ROOT, outputDir), imageFormat, noPdf, twitter, square };
 }
 
 function loadContent(contentPath, twitterMode) {
@@ -78,6 +80,19 @@ function buildInlineCss(slides) {
   return css;
 }
 
+function buildInlineCssSquare(slides) {
+  const templatesDir = join(ROOT, 'templates');
+  const cssDir = join(templatesDir, 'css');
+  const framesSquareDir = join(cssDir, 'frames-square');
+  let css = readFileSync(join(cssDir, 'base-square.css'), 'utf-8');
+  const typesUsed = new Set(slides.map((s) => s.type || 'title-paragraph'));
+  for (const type of typesUsed) {
+    const squarePath = join(framesSquareDir, `${type}.css`);
+    if (existsSync(squarePath)) css += '\n' + readFileSync(squarePath, 'utf-8');
+  }
+  return css;
+}
+
 function buildTwitterCss() {
   const cssDir = join(ROOT, 'templates', 'css');
   let css = readFileSync(join(cssDir, 'base.css'), 'utf-8');
@@ -99,6 +114,15 @@ function renderTwitterTemplate(content, inlineCss) {
   nunjucks.configure(join(ROOT, 'templates'), { autoescape: true });
   return nunjucks.render('twitter-resource.html', {
     ...content,
+    inlineStyles: inlineCss,
+  });
+}
+
+function renderSquareTemplate(content, inlineCss) {
+  nunjucks.configure(join(ROOT, 'templates'), { autoescape: true });
+  return nunjucks.render('slide-square.html', {
+    ...content,
+    title: content.title || 'Carousel',
     inlineStyles: inlineCss,
   });
 }
@@ -177,8 +201,56 @@ async function renderToImagesAndPdf(html, options) {
   await browser.close();
 }
 
+async function renderSquareToImagesAndPdf(html, options) {
+  const { outputDir, imageFormat, noPdf } = options;
+  mkdirSync(outputDir, { recursive: true });
+
+  const browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage();
+
+  await page.setViewportSize({ width: SQUARE_SIZE, height: SQUARE_SIZE });
+  await page.setContent(html, {
+    waitUntil: 'networkidle',
+    timeout: 15000,
+  });
+
+  const frameCount = await page.locator('.frame').count();
+  const ext = imageFormat === 'jpeg' ? 'jpg' : 'png';
+
+  for (let i = 0; i < frameCount; i++) {
+    const frame = page.locator('.frame').nth(i);
+    await frame.scrollIntoViewIfNeeded();
+    const box = await frame.boundingBox();
+    if (!box) continue;
+    const path = join(outputDir, `frame-${String(i + 1).padStart(2, '0')}.${ext}`);
+    await page.screenshot({
+      path,
+      type: imageFormat,
+      clip: { x: box.x, y: box.y, width: box.width, height: box.height },
+    });
+    console.log('Written:', path);
+  }
+
+  if (!noPdf) {
+    const pdfPath = join(outputDir, 'carousel.pdf');
+    await page.emulateMedia({ media: 'print' });
+    await page.evaluate(() => document.fonts.ready);
+    await page.pdf({
+      path: pdfPath,
+      width: `${SQUARE_SIZE}px`,
+      height: `${SQUARE_SIZE}px`,
+      printBackground: true,
+      margin: { top: 0, right: 0, bottom: 0, left: 0 },
+      preferCSSPageSize: true,
+    });
+    console.log('Written:', pdfPath);
+  }
+
+  await browser.close();
+}
+
 async function main() {
-  const { contentPath, outputDir, imageFormat, noPdf, twitter } = parseArgs();
+  const { contentPath, outputDir, imageFormat, noPdf, twitter, square } = parseArgs();
 
   if (twitter) {
     const content = loadContent(contentPath, true);
@@ -189,10 +261,16 @@ async function main() {
   }
 
   const content = loadContent(contentPath, false);
-  const inlineCss = buildInlineCss(content.slides);
-  const html = renderTemplate(content, inlineCss);
 
-  await renderToImagesAndPdf(html, { outputDir, imageFormat, noPdf });
+  if (square) {
+    const inlineCss = buildInlineCssSquare(content.slides);
+    const html = renderSquareTemplate(content, inlineCss);
+    await renderSquareToImagesAndPdf(html, { outputDir, imageFormat, noPdf });
+  } else {
+    const inlineCss = buildInlineCss(content.slides);
+    const html = renderTemplate(content, inlineCss);
+    await renderToImagesAndPdf(html, { outputDir, imageFormat, noPdf });
+  }
 }
 
 main().catch((err) => {

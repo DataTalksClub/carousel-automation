@@ -1,0 +1,110 @@
+/* Frame: outro – square layout (1080×1080) */
+
+.frame-outro {
+  position: relative;
+  background: var(--carousel-green);
+  padding: var(--carousel-padding-y) var(--carousel-padding-x);
+  padding-bottom: calc(var(--carousel-padding-y) + 64px);
+}
+.frame-outro .frame-number {
+  color: var(--carousel-frame-number-on-dark);
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  bottom: 36px;
+  right: 44px;
+}
+.frame-outro-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(1080px - var(--carousel-padding-y) * 2 - 64px);
+  font-family: var(--carousel-font);
+}
+/* Flexible content block - grows with content */
+.frame-outro-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--carousel-space-xl);
+  max-width: var(--carousel-content-max-width);
+}
+.frame-outro-cta {
+  font-family: var(--carousel-font);
+  font-weight: var(--carousel-title-weight);
+  font-size: 4.25rem;  /* square: impactful CTA */
+  line-height: 1.2;
+  letter-spacing: var(--carousel-title-spacing);
+  text-align: left;
+  color: var(--carousel-cream);
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.frame-outro-supporting {
+  font-family: var(--carousel-font);
+  font-weight: var(--carousel-body-weight);
+  font-size: 2.6rem;  /* square: clear supporting text */
+  line-height: 1.4;
+  color: var(--carousel-cream-soft);
+  margin: 0;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.frame-outro-image {
+  max-width: 100%;
+  max-height: 360px;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.frame-outro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.frame-outro-bullets {
+  margin: 0;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  text-align: left;
+  color: var(--carousel-cream-soft);
+  list-style-type: disc;
+}
+.frame-outro-bullets li {
+  margin-bottom: var(--carousel-space-sm);
+  padding-left: 0.75rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+/* Footer: fixed at bottom-left */
+.frame-outro-footer {
+  position: absolute;
+  left: var(--carousel-padding-x);
+  bottom: var(--carousel-padding-y);
+  font-size: 1.125rem;
+  color: rgba(244, 240, 237, 0.9);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem 1.25rem;
+  max-width: calc(100% - var(--carousel-padding-x) * 2);
+}
+.frame-outro-url {
+  color: var(--carousel-cream);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  word-break: break-all;
+}
+.frame-outro-handle,
+.frame-outro-logo {
+  margin-right: 0;
+}
+
+

@@ -1,0 +1,47 @@
+{
+  "title": "5 Must-Have AI Engineer Skills in 2026",
+  "slides": [
+    {
+      "type": "cover",
+      "author": "AI Engineer Events",
+      "title": "5 Must-Have AI Engineer Skills in 2026",
+      "subtitle": "Essential competencies for modern AI engineers"
+    },
+    {
+      "type": "title-paragraph",
+      "title": "1) End-to-End Product Ownership",
+      "body": "You need to transform existing models into usable and reliable software products."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "2) Full-Stack Fundamentals",
+      "body": "While you don't need to be an expert in everything, you should be proficient in: Backend, Databases, APIs, and Deployment."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "3) AI System Integration",
+      "body": "You need to go beyond model API calls. You should understand how to design workflows, handle failures, manage state, evaluate outputs, and ensure system maintainability."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "4) Architecture & Software Discipline",
+      "body": "Master skills like testing, CI/CD, setting up environments, version control, and maintaining a clear project structure to create maintainable systems. This is crucial, especially since the use of AI can lead to unmaintainable systems."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "5) Strong Requirement Translation",
+      "body": "You need to understand vague goals and be able to translate them into technical specifications and systems."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "Learn More",
+      "body": "I'm organizing a series of events to explore the AI engineering role and share my findings with you."
+    },
+    {
+      "type": "outro",
+      "ctaText": "Register for Free",
+      "supportingText": "Join our session on defining the AI engineer role on Tue, Feb 24, 5:00 PM CET",
+      "url": "maven.com/p/f0cada"
+    }
+  ]
+}

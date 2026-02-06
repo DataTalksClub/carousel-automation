@@ -1,0 +1,16 @@
+<div class="frame frame-outro" data-frame-index="{{ loop.index0 }}" data-frame-type="outro">
+  <div class="frame-outro-inner">
+    <div class="frame-outro-block">
+      <p class="frame-outro-cta">{{ slide.ctaText | default(slide.title) }}</p>
+      {% if slide.supportingText %}<p class="frame-outro-supporting">{{ slide.supportingText }}</p>{% endif %}
+      {% if slide.imageUrl %}<div class="frame-outro-image"><img src="{{ slide.imageUrl }}" alt="" /></div>{% endif %}
+      {% if slide.bullets and (slide.bullets | length) > 0 %}
+      <ul class="frame-outro-bullets">
+        {% for item in slide.bullets %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+  <span class="frame-number">{{ loop.index }} / {{ slides | length }}</span>
+</div>
+

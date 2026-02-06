@@ -1,0 +1,10 @@
+<div class="frame frame-title-paragraph{% if slide.variant == 'light' %} frame-title-paragraph-light{% endif %}" data-frame-index="{{ loop.index0 }}" data-frame-type="title-paragraph">
+  <div class="frame-title-paragraph-inner">
+    <div class="frame-title-paragraph-block">
+      <h2 class="frame-title-paragraph-title">{{ slide.title | default(slide.heading) }}</h2>
+      <div class="frame-title-paragraph-body">{{ slide.body | default(slide.paragraph) }}</div>
+    </div>
+  </div>
+  <span class="frame-number">{{ loop.index }} / {{ slides | length }}</span>
+</div>
+

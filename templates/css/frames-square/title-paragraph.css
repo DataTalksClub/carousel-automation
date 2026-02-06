@@ -1,0 +1,158 @@
+/* Frame: title-paragraph – square layout (1080×1080) */
+
+.frame-title-paragraph {
+  position: relative;
+  background: var(--carousel-green);
+  padding: var(--carousel-padding-y) var(--carousel-padding-x);
+  padding-bottom: calc(var(--carousel-padding-y) + 64px);
+}
+.frame-title-paragraph .frame-number {
+  color: var(--carousel-frame-number-on-dark);
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  bottom: 36px;
+  right: 44px;
+}
+.frame-title-paragraph-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(1080px - var(--carousel-padding-y) * 2 - 64px);
+  font-family: var(--carousel-font);
+}
+/* Flexible content block - grows with content */
+.frame-title-paragraph-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--carousel-space-xl);
+  max-width: var(--carousel-content-max-width);
+}
+.frame-title-paragraph-title {
+  font-family: var(--carousel-font);
+  font-weight: var(--carousel-title-weight);
+  font-size: 4.2rem; /* square: bold, impactful title */
+  line-height: 1.2;
+  letter-spacing: var(--carousel-title-spacing);
+  color: var(--carousel-cream);
+  margin: 0;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.frame-title-paragraph-body {
+  font-family: var(--carousel-font);
+  font-weight: var(--carousel-body-weight);
+  font-size: 2.6rem; /* square: substantial, readable body */
+  line-height: 1.45;
+  color: var(--carousel-cream-soft);
+  margin: 0;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+/* Footer: swipe row centered at bottom */
+.frame-title-paragraph-footer {
+  position: absolute;
+  left: 50%;
+  right: auto;
+  bottom: var(--carousel-padding-y);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--carousel-space-sm);
+  pointer-events: none;
+}
+.frame-title-paragraph-footer > * {
+  pointer-events: auto;
+}
+.frame-title-paragraph-swipe {
+  font-family: var(--carousel-font);
+  font-weight: var(--carousel-label-weight);
+  font-size: var(--carousel-label-size);
+  line-height: var(--carousel-label-line);
+  color: var(--carousel-white);
+  margin: 0;
+  white-space: nowrap;
+}
+.frame-title-paragraph-swipe-btn {
+  width: var(--carousel-swipe-btn-size);
+  height: var(--carousel-swipe-btn-size);
+  border-radius: 50%;
+  background: var(--carousel-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.frame-title-paragraph-swipe-btn svg {
+  flex-shrink: 0;
+}
+.frame-title-paragraph-avatar {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frame-title-paragraph-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.frame-title-paragraph-avatar-mask {
+  position: absolute;
+  inset: 0;
+  background: var(--carousel-white);
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.frame-title-paragraph-footer-text {
+  position: absolute;
+  left: var(--carousel-padding-x);
+  bottom: var(--carousel-padding-y);
+  color: rgba(244, 240, 237, 0.85);
+  font-size: 1.125rem;
+  margin: 0;
+  max-width: 70%;
+}
+
+/* Light variant */
+.frame-title-paragraph-light {
+  background: var(--carousel-white);
+}
+.frame-title-paragraph-light .frame-number {
+  color: var(--carousel-frame-number-on-light);
+}
+.frame-title-paragraph-light .frame-title-paragraph-title {
+  color: var(--carousel-black);
+}
+.frame-title-paragraph-light .frame-title-paragraph-body {
+  color: rgba(26, 26, 26, 0.85);
+}
+.frame-title-paragraph-light .frame-title-paragraph-swipe {
+  color: var(--carousel-green);
+}
+.frame-title-paragraph-light .frame-title-paragraph-swipe-btn {
+  background: var(--carousel-green);
+}
+.frame-title-paragraph-light .frame-title-paragraph-swipe-btn svg path {
+  stroke: var(--carousel-white);
+}
+.frame-title-paragraph-light .frame-title-paragraph-avatar-mask {
+  background: var(--carousel-green);
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+}
+.frame-title-paragraph-light .frame-title-paragraph-footer-text {
+  color: rgba(26, 26, 26, 0.7);
+}
+
+

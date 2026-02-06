@@ -1,0 +1,114 @@
+/* Base styles for square carousel frames (1080×1080). Frame-specific styles live in css/frames/<type>.css */
+
+/* Shared design tokens reused from vertical base, with adjusted layout for square format */
+:root {
+  /* Colors */
+  --carousel-green: #032911;
+  --carousel-cream: #F4F0ED;
+  --carousel-cream-soft: rgba(244, 240, 237, 0.92);
+  --carousel-white: #FFFFFF;
+  --carousel-black: #1a1a1a;
+  
+  /* Spacing */
+  --carousel-padding-x: 64px;
+  --carousel-padding-y: 64px;
+  --carousel-space-xs: 1rem;
+  --carousel-space-sm: 1.5rem;
+  --carousel-space-md: 2rem;
+  --carousel-space-lg: 2.75rem;
+  --carousel-space-xl: 3.5rem;
+  
+  /* Font: system default sans-serif only */
+  --carousel-font: sans-serif;
+
+  /* Typography – square format (optimized for 1080×1080 canvas) */
+  --carousel-title-size: 4rem;        /* 64px - bold, impactful */
+  --carousel-title-line: 1.2;
+  --carousel-title-weight: 700;
+  --carousel-title-spacing: -0.02em;
+  --carousel-body-size: 2.5rem;       /* 40px - readable, substantial */
+  --carousel-body-line: 1.45;
+  --carousel-body-weight: 400;
+  --carousel-label-size: 1.75rem;     /* 28px - clear labels */
+  --carousel-label-line: 1.3;
+  --carousel-label-weight: 600;
+  
+  /* Layout */
+  --carousel-content-max-width: 900px;
+  --carousel-swipe-btn-size: 64px;
+  
+  /* Effects */
+  --carousel-btn-shadow: 0 2px 8px rgba(3, 41, 17, 0.2);
+  --carousel-btn-shadow-light: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --carousel-frame-number-on-dark: rgba(244, 240, 237, 0.4);
+  --carousel-frame-number-on-light: rgba(3, 41, 17, 0.3);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--carousel-font);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.frame {
+  width: 1080px;
+  height: 1080px;
+  padding: 64px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--carousel-font);
+  background: #fff;
+  color: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+
+.frame:last-child {
+  page-break-after: auto;
+}
+
+.frame-number {
+  position: absolute;
+  bottom: 32px;
+  right: 40px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #666;
+}
+
+/* Print: one frame per PDF page */
+@page {
+  size: 1080px 1080px;
+  margin: 0;
+}
+@media print {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1080px;
+    height: auto;
+    overflow: visible;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .frame {
+    width: 1080px !important;
+    height: 1080px !important;
+    min-height: 1080px;
+    max-height: 1080px;
+    page-break-after: always;
+    page-break-inside: avoid;
+    box-sizing: border-box;
+  }
+  .frame:last-child {
+    page-break-after: auto;
+  }
+}
+
