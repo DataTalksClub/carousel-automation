@@ -10,7 +10,7 @@
  *
  * Usage:
  *   node src/render.js [content.json] [--output dir] [--format png|jpeg] [--no-pdf]
- *   node src/render.js [content.json] --twitter [--output dir]  → single 1200×675 document/resource image
+ *   node src/render.js [content.json] --twitter [--output dir]  → single 1080×1350 vertical document/resource image
  */
 
 import { chromium } from 'playwright';
@@ -25,8 +25,8 @@ const ROOT = resolve(__dirname, '..');
 const SLIDE_WIDTH = 630;
 const SLIDE_HEIGHT = 1200;
 const SQUARE_SIZE = 1080;
-const TWITTER_WIDTH = 1200;
-const TWITTER_HEIGHT = 675;
+const TWITTER_WIDTH = 1080;
+const TWITTER_HEIGHT = 1350;
 
 const FRAME_TYPES = new Set([
   'cover', 'section-divider', 'outro', 'title-paragraph', 'bullet-list', 'numbered-steps',

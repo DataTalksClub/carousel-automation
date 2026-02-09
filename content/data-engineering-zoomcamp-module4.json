@@ -1,0 +1,52 @@
+{
+  "title": "Data Engineering Zoomcamp - Module 4: Analytics Engineering",
+  "slides": [
+    {
+      "type": "cover",
+      "author": "Data Engineering Zoomcamp",
+      "title": "Module 4: Analytics Engineering",
+      "subtitle": "Transform raw warehouse data into analytical views"
+    },
+    {
+      "type": "title-paragraph",
+      "title": "What You'll Learn",
+      "body": "Build a dbt project on NYC yellow and green taxi data (2019-2020). Transform raw warehouse data into analytical views using modern analytics engineering practices."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "Analytics Engineering Fundamentals",
+      "body": "Learn the core principles of analytics engineering and how to structure data transformation workflows for production analytics."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "Data Modeling Concepts",
+      "body": "Master dimensional modeling, fact and dimension tables, and how to design analytical schemas that support business intelligence."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "dbt Core vs dbt Cloud",
+      "body": "Understand the differences between dbt Core (open-source CLI) and dbt Cloud (managed platform), and when to use each."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "Project Setup & Structure",
+      "body": "Set up your dbt project with sources, models, seeds, and macros. Learn how to organize your analytics codebase effectively."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "Tests, Docs & Commands",
+      "body": "Implement data quality tests, write documentation, use packages, and master core dbt commands for development and deployment."
+    },
+    {
+      "type": "title-paragraph",
+      "title": "Common Issues & Troubleshooting",
+      "body": "Learn how to debug dbt projects, handle dependency issues, optimize performance, and resolve common errors."
+    },
+    {
+      "type": "outro",
+      "ctaText": "Start Module 4",
+      "supportingText": "Big thanks to Juan Manuel Perafan for updating this module, originally recorded by Victoria Perez Mola.",
+      "url": "github.com/DataTalksClub/data-engineering-zoomcamp"
+    }
+  ]
+}

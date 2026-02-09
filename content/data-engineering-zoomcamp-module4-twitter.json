@@ -1,0 +1,62 @@
+{
+  "resourceTitle": "dbt Analytics Engineering Cheatsheet",
+  "subtitle": "Module 4: Data Engineering Zoomcamp",
+  "sections": [
+    {
+      "heading": "What You'll Build",
+      "body": "Transform NYC yellow and green taxi data (2019-2020) into analytical views using dbt."
+    },
+    {
+      "heading": "Analytics Engineering Fundamentals",
+      "bullets": [
+        "Transform raw warehouse data into analytical views",
+        "Structure data transformation workflows",
+        "Build production-ready analytics pipelines"
+      ]
+    },
+    {
+      "heading": "Data Modeling Concepts",
+      "bullets": [
+        "Dimensional modeling principles",
+        "Fact and dimension tables",
+        "Design analytical schemas for BI"
+      ]
+    },
+    {
+      "heading": "dbt Core vs dbt Cloud",
+      "bullets": [
+        "dbt Core: Open-source CLI tool",
+        "dbt Cloud: Managed platform",
+        "Choose based on your team's needs"
+      ]
+    },
+    {
+      "heading": "Project Structure",
+      "bullets": [
+        "Sources: Define your raw data",
+        "Models: Transformations and views",
+        "Seeds: Static reference data",
+        "Macros: Reusable SQL functions"
+      ]
+    },
+    {
+      "heading": "Core dbt Features",
+      "bullets": [
+        "Tests: Data quality validation",
+        "Documentation: Self-documenting code",
+        "Packages: Reusable dbt projects",
+        "Commands: dbt run, test, docs generate"
+      ]
+    },
+    {
+      "heading": "Troubleshooting Tips",
+      "bullets": [
+        "Debug dependency issues",
+        "Optimize query performance",
+        "Handle common errors",
+        "Use dbt logs effectively"
+      ]
+    }
+  ],
+  "cta": "Start Module 4: github.com/DataTalksClub/data-engineering-zoomcamp"
+}

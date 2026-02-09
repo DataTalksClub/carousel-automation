@@ -23,7 +23,7 @@ This project supports three output formats:
 
 1. **Carousel Vertical** (630×1200px) — Default format for LinkedIn/Instagram carousels
 2. **Carousel Square** (1080×1080px) — Square format for Instagram posts
-3. **Twitter Resource** (1200×675px) — Single-image resource for Twitter
+3. **Twitter Resource** (1080×1350px) — Single vertical document/cheatsheet image
 
 ### Usage
 
@@ -50,7 +50,7 @@ node src/render.js content/example.json --format jpeg --no-pdf
 | `--format`  | `png` (default) or `jpeg`            |
 | `--no-pdf`  | Only export images, no PDF           |
 | `--square`  | Render square format (1080×1080px)   |
-| `--twitter` | Render Twitter resource (1200×675px) |
+| `--twitter` | Render Twitter resource (1080×1350px vertical) |
 
 ### Content JSON shape
 
@@ -103,7 +103,7 @@ Templates are organized by format:
 - **Base CSS:** `templates/css/base-square.css`
 - **Frame CSS:** `templates/css/frames-square/<type>.css`
 
-#### Twitter Resource (1200×675px)
+#### Twitter Resource (1080×1350px vertical)
 - **Shell:** `templates/twitter-resource.html`
 - **CSS:** `templates/css/twitter-resource.css`
 

@@ -1,0 +1,47 @@
+{
+  "resourceTitle": "5 Must-Have AI Engineer Skills in 2026",
+  "subtitle": "A quick cheatsheet for the modern AI engineer",
+  "sections": [
+    {
+      "heading": "1) End-to-end product ownership",
+      "bullets": [
+        "Ship usable products, not just model demos",
+        "Turn existing models into reliable software",
+        "Own quality, monitoring, and user impact"
+      ]
+    },
+    {
+      "heading": "2) Full-stack fundamentals",
+      "bullets": [
+        "Comfortable with backend APIs and services",
+        "Can work with relational / NoSQL databases",
+        "Understands deployments, environments, and observability"
+      ]
+    },
+    {
+      "heading": "3) AI system integration",
+      "bullets": [
+        "Design workflows, not only API calls",
+        "Handle failures, retries, and rate limits",
+        "Manage state and evaluate model outputs"
+      ]
+    },
+    {
+      "heading": "4) Architecture & software discipline",
+      "bullets": [
+        "Writes tests and uses CI/CD",
+        "Keeps a clear, version-controlled project structure",
+        "Builds systems that are maintainable post-handoff"
+      ]
+    },
+    {
+      "heading": "5) Strong requirement translation",
+      "bullets": [
+        "Turn vague goals into concrete specs",
+        "Clarify constraints, success metrics, and edge cases",
+        "Communicate trade-offs with non-technical stakeholders"
+      ]
+    }
+  ],
+  "cta": "Bookmark this and focus your 2026 learning roadmap on these 5 skills."
+}
